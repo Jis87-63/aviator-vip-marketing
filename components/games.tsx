@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 const games = [
   {
     name: "Aviator",
-    image: "/aviator-real.png",
+    image: "/aviator-game.png", // corrigindo nome da imagem do Aviator
     description: "O jogo mais popular de Moçambique! Multiplique seus ganhos até 1000x",
     popularity: "98%",
     featured: true,
@@ -48,8 +48,11 @@ export function Games() {
     <section id="jogos" className="py-16 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Jogos Mais Populares em Moçambique</h2>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-100 mb-4">Jogos Mais Populares em Moçambique</h2>{" "}
+          {/* melhor contraste */}
+          <p className="text-xl text-gray-200 max-w-2xl mx-auto">
+            {" "}
+            {/* melhor legibilidade */}
             Aviator é o jogo do momento! Explore nossa seleção completa com as melhores taxas de retorno em MZN.
           </p>
         </div>
@@ -58,9 +61,9 @@ export function Games() {
           {games.map((game, index) => (
             <Card
               key={index}
-              className={`bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/15 transition-all duration-300 overflow-hidden ${
+              className={`bg-gray-900/80 backdrop-blur-sm border-gray-700 hover:bg-gray-800/80 transition-all duration-300 overflow-hidden ${
                 game.featured ? "ring-2 ring-yellow-400 transform scale-105" : ""
-              }`}
+              }`} // fundo mais escuro para melhor contraste
             >
               <div className="relative">
                 <img src={game.image || "/placeholder.svg"} alt={game.name} className="w-full h-48 object-cover" />
@@ -78,8 +81,8 @@ export function Games() {
                 )}
               </div>
               <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2">{game.name}</h3>
-                <p className="text-white/80 mb-4">{game.description}</p>
+                <h3 className="text-xl font-bold text-gray-100 mb-2">{game.name}</h3> {/* melhor contraste */}
+                <p className="text-gray-200 mb-4">{game.description}</p> {/* melhor legibilidade */}
                 <Button
                   variant="outline"
                   className={`w-full border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black bg-transparent ${
